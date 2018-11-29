@@ -36,10 +36,7 @@ app.post('/algoritmo', (req, res) => {
 
     let body = req.body;
 
-    let textTest = req.body;
-    res.json({
-        body
-    })
+    let textTest = req.body.textoPrueba;
 
     // hay que unir los nombres compuestos con un comodin
     let textoConComodin = "";
@@ -67,7 +64,7 @@ app.post('/algoritmo', (req, res) => {
     // se reemplazan los tipos de ropas con la manera italica
     palabrasEnTexto.forEach((palabra, index) => {
         if (lowerCaseRopa.indexOf(palabra.toLowerCase()) != -1) {
-            palabrasEnTexto[index] = `<del>${ palabra }</del>`;
+            palabrasEnTexto[index] = `<i>${ palabra }</i>`;
         }
     });
 
